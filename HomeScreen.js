@@ -6,13 +6,11 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { baseGestureHandlerProps } from 'react-native-gesture-handler/lib/typescript/handlers/gestureHandlerCommon.js';
 import BottomNavigation from '../Navigators/BottomNavgation.js';
 
-
-
 const HomeScreen = ({ navigation }) => {
   const animation = useRef(null);
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: '#F4C50B', }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: '#F4C50B',justifyContent:'space-around',alignItems:'center' }}>
       <View style={{
         height: 50, flexDirection: 'row', borderBottomWidth: 1, borderRadius: 14, shadowColor: '#171717',
         shadowOffset: { width: -2, height: 4 },
@@ -25,20 +23,20 @@ const HomeScreen = ({ navigation }) => {
           <Image source={image.notification} style={{ height: 25, width: 25, }} resizeMode={'contain'} />
         </TouchableOpacity>
       </View>
-      <View >
-        <View style={styles.container}>
+       <View >
+        {/* <View style={styles.container}>
           <Image source={image.search} style={{ height: 30, width: 30, margin: 10 }} />
           <TextInput
             autoCorrect={false}
             style={styles.inputStyle}
             placeholder='search'
           />
-        </View>
+        </View>  */}
         <View style={styles.viewStyle1}>
-          <View style={{ flexDirection: 'row' }}>
+          <View style={{ flexDirection: 'row',alignItems:'center' }}>
             <Text style={{ marginLeft: 15, fontWeight: 'bold', fontSize: 22, marginTop: 15 }}>Choose Your Fuel Type</Text>
             <TouchableOpacity style={{ marginLeft: 60, marginTop: 12 }} onPress={() => navigation.navigate('fuel')}>
-              <Image source={image.forward} style={{ height: 40, width: 40 }} resizeMode='contain' />
+              <Image source={image.forward} style={{ height: 40, width: 40,paddingRight:'3%',marginRight:20 }} resizeMode='contain' />
             </TouchableOpacity>
           </View>
           <View style={{ flexDirection: 'row', padding: 17 }}>
@@ -127,8 +125,11 @@ const styles = StyleSheet.create({
   },
   viewStyle1: {
     borderRadius: 12,
-    margin: 15,
-    marginTop: 10,
+    width:'50%',
+    marginLeft:'3.5%',
+    // margin: 15,
+     marginTop: '4%',
+    justifyContent:'center',
     backgroundColor: '#cecece',
     shadowColor: '#171717',
     shadowOffset: { width: -2, height: 4 },
