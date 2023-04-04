@@ -5,12 +5,12 @@ import { image } from '../Helper/ImageHelper'
 const SplashScreen = ({navigation}) => {
     useEffect(()=> {
         setTimeout(()=>{
-            navigation.navigate('signUp');
+            navigation.navigate('vc');
         },2000)
     },[])
   return (
     <View>
-    <TouchableOpacity onPress={()=>navigation.navigate('signUp')}>
+    <TouchableOpacity onPress={()=>navigation.navigate('vc')}>
       <Image source={image.splash} resizeMode={'cover'} style={{height:900,width:403,}}  />
       </TouchableOpacity>
     </View>
